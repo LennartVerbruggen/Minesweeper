@@ -1,0 +1,14 @@
+{
+    "first-name": "Lennart",
+    "last-name": "Verbruggen",
+    "github-url": "https://github.com/ucll-vgo2122/minesweeper-LennartVerbruggen",
+    "framework": "WPF",
+    "extensions": [
+        "Timer",
+        "Quickstart",
+        "Custom mine probability",
+        "Different color depending on amount neighboring mines",
+        "Improved visualization of squares",
+        "Replay Moves"
+    ]
+}

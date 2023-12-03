@@ -1,0 +1,57 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        xmlns:screenViewModels="clr-namespace:ViewModel.ScreenViewModels;assembly=ViewModel"
+        xmlns:screens="clr-namespace:View.Screens"
+        mc:Ignorable="d"
+        Title="Minesweeper; Lennart Edition" Height="750" Width="1000">
+
+    <ContentControl Content="{Binding CurrentScreen.Value}">
+        <ContentControl.Resources>
+
+            <DataTemplate DataType="{x:Type screenViewModels:SettingsScreenViewModel}">
+                <screens:SettingsScreen/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type screenViewModels:GameScreenViewModel}">
+                <screens:GameScreen/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type screenViewModels:ReplayScreenViewModel}">
+                <screens:ReplayScreen/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+    
+    <!--<Window.Resources>
+        <converters:SquareStatusConverter x:Key="squareStatusToEllipseFill" UncoveredStatus="White" CoveredStatus="White" MineStatus="Black" FlaggedStatus="Orange"/>
+        <converters:SquareVisabiltyConverter x:Key="squareStatusToSeeNearBombs"></converters:SquareVisabiltyConverter>
+    </Window.Resources>
+    <Grid>
+        <ItemsControl ItemsSource="{Binding Board.rows}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ItemsControl ItemsSource="{Binding Squares}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Width="32" Height="32" Command="{Binding Uncover}">
+                                    <Grid>
+                                        <Ellipse Width="20" Height="20" Fill="{Binding square.Value.Status, Converter={StaticResource squareStatusToEllipseFill}, Mode=OneWay}"/>
+                                        <TextBlock Visibility="{Binding square.Value.Status, Converter={StaticResource squareStatusToSeeNearBombs}}" Text="{Binding square.Value.NeighboringMineCount}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Grid>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>-->
+</Window>
